@@ -228,7 +228,7 @@ async function starts() {
 								number: []
 							})
 						}
-						fs.writeFileSync('./src/json/dontback.json', JSON.stringify(dontback, null, 2) + '\n')
+						fs.writeFileSync(' ./src/dontback.json', JSON.stringify(dontback, null, 2) + '\n')
 						reply(`Ativou com sucesso o recurso de don't back neste grupo✔️`)
 					} else if (Number(args[0]) === 0) {
 						var ind = dbids.indexOf(from)						
