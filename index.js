@@ -213,6 +213,40 @@ async function starts() {
 			const isDontBack = (isGroup && dbids.indexOf(from) >= 0) ? true : false
 
 			switch(command) {
+				case 'dontback':
+					if (!isGroup) return reply(mess.only.admin)
+					if (!isGroupAdmins) return reply(mess.only.admin)
+					if (args.length < 1) return reply('Hmmmm')
+					if (Number(args[0]) === 1) {
+						var ind = dbids.indexOf(from)
+						if(isDontBack) {
+							dontback[ind].actived = true
+						} else {
+							dontback.push({
+								groupId: from,
+								actived: true,
+								number: []
+							})
+						}
+						fs.writeFileSync('./src/json/dontback.json', JSON.stringify(dontback, null, 2) + '\n')
+						reply(`Ativou com sucesso o recurso de don't back neste grupo✔️`)
+					} else if (Number(args[0]) === 0) {
+						var ind = dbids.indexOf(from)						
+						if(isDontBack) {
+							dontback[ind].actived = false
+						} else {
+							dontback.push({
+								groupId: from,
+								actived: false,
+								number: []
+							})
+						}
+						fs.writeFileSync('./src/json/dontback.json', JSON.stringify(dontback, null, 2) + '\n')
+						reply(`Desativou com sucesso o recurso de don't back neste grupo✔️`)
+					} else {
+						reply('1 para ativar, 0 para desativar')
+					}
+				break
 				case 'addlista':
 					if (!isGroup) return reply(mess.only.admin)
 					if (!isGroupAdmins) return reply(mess.only.admin)
