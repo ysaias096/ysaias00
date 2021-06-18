@@ -228,7 +228,7 @@ async function starts() {
 								number: []
 							})
 						}
-						fs.writeFileSync(' ./src/dontback.json', JSON.stringify(dontback, null, 2) + '\n')
+						fs.writeFileSync('./src/dontback.json', JSON.stringify(dontback, null, 2) + '\n')
 						reply(`Ativou com sucesso o recurso de don't back neste grupo✔️`)
 					} else if (Number(args[0]) === 0) {
 						var ind = dbids.indexOf(from)						
@@ -241,7 +241,7 @@ async function starts() {
 								number: []
 							})
 						}
-						fs.writeFileSync('./src/json/dontback.json', JSON.stringify(dontback, null, 2) + '\n')
+						fs.writeFileSync('./src/dontback.json', JSON.stringify(dontback, null, 2) + '\n')
 						reply(`Desativou com sucesso o recurso de don't back neste grupo✔️`)
 					} else {
 						reply('1 para ativar, 0 para desativar')
