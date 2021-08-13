@@ -71,7 +71,7 @@ async function starts() {
 					num = anu.participants[0]
 					var ind = dbackid.indexOf(anu.jid)
 					if(dontback[ind].actived && dontback[ind].number.indexOf(num.split('@')[0]) >= 0) {
-						await client.sendMessage(mdata.id, '*Olha quem deu as cara por aqui, sente o poder do ban cabaço*', MessageType.text)
+						await client.sendMessage(mdata.id, '𝙊𝙇𝙃𝘼 𝙎𝙊́ 𝙌𝙐𝙀𝙈 𝙀𝙉𝙏𝙍𝙊𝙐 𝙆𝙆𝙆𝙆𝙆𝙆𝙆 𝙅𝘼́ 𝙑𝘼𝙄 𝘿𝙀 𝘽𝘼𝙉 𝙁𝘿𝙋 😂', MessageType.text)
 						client.groupRemove(mdata.id, [num])
 					}
 				}
@@ -80,7 +80,7 @@ async function starts() {
 				if (anu.action == 'add'){
 					num = anu.participants[0]
 					if(!num.split('@')[0].startsWith(55)) {
-						client.sendMessage(mdata.id, '.', MessageType.text)
+						client.sendMessage(mdata.id, '𝘃𝗮𝘇𝗮 𝗱𝗮𝗾𝘂𝗶 𝗗𝗗𝗗 𝗱𝗲 𝗺𝗮𝗰𝗮𝗰𝗼 🐒', MessageType.text)
 						setTimeout(async function () {
 							client.groupRemove(mdata.id, [num])
 							return
@@ -179,7 +179,7 @@ async function starts() {
 			if (!isCmd && isGroup) console.log('\x1b[1;31m~\x1b[1;37m>', '[\x1b[1;31mRECV\x1b[1;37m]', time, color('Message'), 'from', color(sender.split('@')[0]), 'in', color(groupName), 'args :', color(args.length))
 			if(isCmd && blockeds.includes(sender)) return reply('*❌NUMERO BLOQUEADO❌*')
 			if(isAntiPv && !isOwner && !isGroup) {
-				reply('*PV BLOQUEADO, LOGO SERA BLOQUEADO*')
+				reply('𝙎𝘼𝙄 𝘿𝙊 𝙈𝙀𝙐 𝙋𝙑 𝙎𝙐𝘼 𝙋𝙐𝙏𝘼 𝙑𝘼𝘿𝙄𝘼 🙄')
 				client.blockUser(sender, 'add')
 				return
 			}
@@ -213,7 +213,7 @@ async function starts() {
 			const isDontBack = (isGroup && dbids.indexOf(from) >= 0) ? true : false
 
 			switch(command) {
-				case 'dontback':
+				case 'brooklyn':
 					if (!isGroup) return reply(mess.only.admin)
 					if (!isGroupAdmins) return reply(mess.only.admin)
 					if (args.length < 1) return reply('Hmmmm')
@@ -286,11 +286,11 @@ async function starts() {
 					if (!isGroupAdmins) return reply(mess.only.admin)
 					var ind = dbids.indexOf(from)
 					if(!isDontBack) return reply('*Nenhum Número não foi adicionado*')
-					teks = '*Números que vou moer na porrada se voltar 😡:*\n'
+					teks = '𝘼𝙎 𝙑𝘼𝘿𝙄𝘼 𝙌𝙐𝙀 𝙉 𝙋𝙊𝘿𝙀 𝙀𝙉𝙏𝙍𝘼𝙍 𝙉𝙊 𝘽𝙍𝙊𝙊𝙆𝙇𝙔𝙉👇:\n'
 					for(i=0;i<dontback[ind].number.length;++i) {
 						teks += `➤ *${dontback[ind].number[i]}*\n`
 					}
-					teks += '*Esses ai vou descer meu martelo do ban 🥵*'
+					teks += '𝗩𝗼𝘂 𝗺𝗲𝘁𝗲𝗿 𝗮 𝗽𝗶𝗸𝗮 𝗱𝗲 40𝗰𝗺 𝘀𝗲 𝗲𝘀𝘀𝗲𝘀 𝗺𝗮𝗰𝗮𝗰𝗼 𝘃𝗼𝗹𝘁𝗮𝗿 𝗮𝗾𝘂𝗶 😳🤝'
 					reply(teks)
 				break
 				case 'antipv':
@@ -365,7 +365,7 @@ async function starts() {
 						client.updatePresence(from, Presence.composing)
 						client.requestPresenceUpdate(from, Presence.available)
 						let online = [...Object.keys(client.chats.get(from).presences)]
-						client.sendMessage(from, '𝐌𝐚𝐜𝐚𝐪𝐮𝐢𝐧𝐡𝐨𝐬🐒 𝐨𝐧𝐥𝐢𝐧𝐞👀:\n\n' + online.map(v => '- @' + v.replace(/@.+/, '')).join`\n`, extendedText, {quoted: mek, contextInfo: {"mentionedJid": online}})
+						client.sendMessage(from, '𝐌𝐚𝐜𝐚𝐪𝐮𝐢𝐧𝐡𝐨𝐬🐒 𝐨𝐧𝐥𝐢𝐧𝐞??:\n\n' + online.map(v => '- @' + v.replace(/@.+/, '')).join`\n`, extendedText, {quoted: mek, contextInfo: {"mentionedJid": online}})
 					} catch {
 						reply(msgerr)
 					}
@@ -479,7 +479,7 @@ async function starts() {
 						reply('Deu erro, tente novamente :/')
 					}
 				break
-				case 'kick':
+				case 'vaza':
 					if (!isGroup) return reply(mess.only.group)
 					if (!isGroupAdmins) return reply(mess.only.admin)
 					if (!isBotGroupAdmins) return reply(mess.only.Badmin)

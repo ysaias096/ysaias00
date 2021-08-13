@@ -1,45 +1,47 @@
 const help = (prefix) => {
 	return `😡⚡𝐁𝐎𝐓 𝐌𝐎𝐃𝐎 𝐆𝐔𝐄𝐑𝐑𝐀⚡😡
 
-*💻🔥𝐘𝐒𝐀𝐈𝐀𝐒 𝐃𝐔𝐒 𝐂𝐇𝐈𝐏𝐒🔥💻*
+*💻🔥𝐘𝐒𝐀𝐈𝐀𝐒 𝐌𝐎𝐃𝐃𝐄𝐑 🔥💻*
 
- *💸 🌴🍁፝⃟ꦿ⃟ۜ ͜ 𝕭 𝕽 𝐎 𝐎 𝚱 𝐋 𝐘 𝐍  ⃟⁩⃟⁩  ⃟⁩🍁🌴💸*
+ *‼️🍁፝⃟ꦿ⃟ۜ ͜ 𝕭 𝕽 𝐎 𝐎 𝚱 𝐋 𝐘 𝐍  ⃟⁩⃟⁩  ⃟⁩🍁‼️*
 
-⚡🙈𝗖𝗢𝗠𝗔𝗡𝗗𝗢𝗦 𝗕𝗥𝗔𝗕𝗢𝗫✨🌴
+🥶 𝗖𝗢𝗠𝗔𝗡𝗗𝗢𝗦 🥶
 
-🌹፝⃟⛱️꙳${prefix}🔥 menu
+🌹፝⃟🌝꙳${prefix}🧲 menu
 
-🌹፝⃟⛱️꙳${prefix}🔥 addlista
+🌹፝⃟🌝꙳${prefix}🧲 addlista
 
-🌹፝⃟⛱️꙳${prefix}🔥 removerlista
+🌹፝⃟🌝꙳${prefix}🧲 removerlista
 
-🌹፝⃟⛱️꙳${prefix}🔥 listanegra
+🌹፝⃟🌝꙳${prefix}🧲 listanegra
 
-🌹፝⃟⛱️꙳${prefix}🔥 block 
+🌹፝⃟🌝꙳${prefix}🧲 block 
 
-🌹፝⃟⛱️꙳${prefix}🔥 unblock
+🌹፝⃟🌝꙳${prefix}🧲 unblock
 
-🌹፝⃟⛱️꙳${prefix}🔥 blacklist
+🌹፝⃟🌝꙳${prefix}🧲 blacklist
 
-🌹፝⃟⛱️꙳${prefix}🔥 antipv 
+🌹፝⃟🌝꙳${prefix}🧲 antipv (1 or 0)
 
-🌹፝⃟⛱️꙳${prefix}🔥 attp (texto)
+🌹፝⃟🌝꙳${prefix}🧲 attp (texto)
 
-🌹፝⃟⛱️꙳${prefix}🔥 gerarcc
+🌹፝⃟🌝꙳${prefix}🧲 gerarcc
 
-🌹፝⃟⛱️꙳${prefix}🔥 criador   (n° do Ysaias)
+🌹፝⃟🌝꙳${prefix}🧲 criador   (n° do Ysaias)
 
-🌹፝⃟⛱️꙳${prefix}🔥 listonline
+🌹፝⃟🌝꙳${prefix}🧲 listonline
 
-🌹፝⃟⛱️꙳${prefix}🔥 antilink (1 or 0)
+🌹፝⃟🌝꙳${prefix}🧲 antilink (1 or 0)
 
-🌹፝⃟⛱️꙳${prefix}🔥 antilinkhard (1 or 0)
+🌹፝⃟🌝꙳${prefix}🧲 antilinkhard (1 or 0)
 
-🌹፝⃟⛱️꙳${prefix}🔥 antifake (1 or 0)
+🌹፝⃟🌝꙳${prefix}🧲 antifake (1 or 0)
 
-🌹፝⃟⛱️꙳${prefix}🔥 kick
+🌹፝⃟🌝꙳${prefix}🧲 vaza (marcar o número)
 
-🌹፝⃟⛱️꙳${prefix}🔥 f
+🌹፝⃟🌝꙳${prefix}🧲 brooklyn (1 or 0)
+
+🌹፝⃟🌝꙳${prefix}🧲 f
 Função: bane o n° da msg respondida`
 }
 
