@@ -80,7 +80,6 @@ async function starts() {
 				if (anu.action == 'add'){
 					num = anu.participants[0]
 					if(!num.split('@')[0].startsWith(55)) {
-						client.sendMessage(mdata.id, '𝘃𝗮𝘇𝗮 𝗱𝗮𝗾𝘂𝗶 𝗗𝗗𝗗 𝗱𝗲 𝗺𝗮𝗰𝗮𝗰𝗼 🐒', MessageType.text)
 						setTimeout(async function () {
 							client.groupRemove(mdata.id, [num])
 							return
