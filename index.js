@@ -19,6 +19,7 @@ const { welcometxt } = require('./welcometext')
 const antilink = JSON.parse(fs.readFileSync('./src/antilink.json'))
 const antilinkhard = JSON.parse(fs.readFileSync('./src/antilinkhard.json'))
 const antifake = JSON.parse(fs.readFileSync('./src/antifake.json'))
+const {stickerImgTag, stickerVidTag, addExif, stickerForVideo } = require('./lib/sticker')
 const blockeds = JSON.parse(fs.readFileSync('./src/blocklist.json'))
 const vcard = 'BEGIN:VCARD\n' 
             + 'VERSION:3.0\n' 
@@ -43,7 +44,7 @@ function kyun(seconds){
 
 async function starts() {
 	const client = new WAConnection()
-	client.version = [2, 2119, 6]
+	client.version = [2,2142,12]
 	client.logger.level = 'warn'
 	console.log(banner.string)
 	client.on('qr', () => {
@@ -212,6 +213,46 @@ async function starts() {
 			const isDontBack = (isGroup && dbids.indexOf(from) >= 0) ? true : false
 
 			switch(command) {
+				case 'nstiker':
+				case 'nsticker':
+					teks = body.slice(10)
+					if ((isMedia && !mek.message.videoMessage || isQuotedImage)) {
+						if(teks.split('|').length < 2) return reply('*Diga o nome do autor e pacote usando | para separa-los*')
+						const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
+						const media = await client.downloadAndSaveMediaMessage(encmedia)
+						gb1 = teks.split('|')[0].trim()
+						gb2 = teks.split('|')[1].trim()
+						ran = getRandom('.exif')
+						buff = await stickerImgTag(media, gb1, gb2, ran)
+						client.sendMessage(from, buff.result, sticker, {quoted: mek})
+					} else if ((isMedia && mek.message.videoMessage.seconds < 11 || isQuotedVideo && mek.message.extendedTextMessage.contextInfo.quotedMessage.videoMessage.seconds < 11)) {
+						if(teks.split('|').length < 2) return reply('*Diga o nome do autor e pacote usando | para separa-los*')
+						const encmedia = isQuotedVideo ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
+						const media = await client.downloadAndSaveMediaMessage(encmedia)
+						gb1 = teks.split('|')[0].trim()
+						gb2 = teks.split('|')[1].trim()
+						ran = getRandom('.exif')
+						buff = await stickerVidTag(media, gb1, gb2, ran)
+						client.sendMessage(from, buff.result, sticker, {quoted: mek})
+					}
+					break
+				case 'hidemarcar':
+					if (!isGroup) return reply(mess.only.group)
+					if (!isGroupAdmins) return reply(mess.only.admin)
+					value = body.slice(12)
+					group = await client.groupMetadata(from)
+					member = group['participants']
+					mem = []
+					member.map( async adm => {
+					mem.push(adm.id.replace('c.us', 's.whatsapp.net'))
+					})
+					options = {
+					text: value,
+					contextInfo: { mentionedJid: mem },
+					quoted: mek
+					}
+					client.sendMessage(from, options, text)
+					break
 				case 'brooklyn':
 					if (!isGroup) return reply(mess.only.admin)
 					if (!isGroupAdmins) return reply(mess.only.admin)
